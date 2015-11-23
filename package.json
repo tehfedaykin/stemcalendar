@@ -1,0 +1,46 @@
+{
+  "name": "stemcalendar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "lint": "jshint src/client/app/*.js",
+    "build": "webpack",
+    "watch": "nodemon -e js,html,less -w src/client -x 'npm run build'",
+    "deploy": "webpack --config webpack.build.js",
+    "test": "karma start",
+    "start": "webpack && node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "angular-ui-router": "^0.2.15",
+    "autoprefixer": "^6.1.1",
+    "babel-core": "^6.2.1",
+    "babel-loader": "^6.2.0",
+    "extract-text-webpack-plugin": "^0.9.1",
+    "file-loader": "^0.8.4",
+    "html-webpack-plugin": "^1.7.0",
+    "jshint": "^2.8.0",
+    "jshint-loader": "^0.8.3",
+    "json-loader": "^0.5.3",
+    "karma": "^0.13.15",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.1.8",
+    "karma-junit-reporter": "^0.3.4",
+    "karma-mocha": "~0.1",
+    "karma-sinon": "^1.0.4",
+    "karma-sourcemap-loader": "^0.3.6",
+    "karma-spec-reporter": "0.0.20",
+    "karma-webpack": "^1.7.0",
+    "less": "^2.5.3",
+    "less-loader": "^2.2.1",
+    "ng-annotate-loader": "0.0.10",
+    "webpack": "^1.12.2"
+  },
+  "dependencies": {
+    "angular": "^1.4.8",
+    "babel": "^6.1.18",
+    "express": "^4.13.3"
+  }
+}
