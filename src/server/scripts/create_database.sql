@@ -2,9 +2,10 @@
 CREATE EXTENSION IF NOT EXISTS cube;
 CREATE EXTENSION IF NOT EXISTS earthdistance;
 
-DROP DATABASE stem_events;
+-- DROP DATABASE IF EXISTS stem_events;
+-- COMMIT;
 DROP ROLE stem_user;
-DROP TABLE events;
+-- DROP TABLE events;
 
 CREATE DATABASE stem_events;
 -- createuser stem_events;
