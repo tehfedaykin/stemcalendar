@@ -43,6 +43,7 @@
   "dependencies": {
     "angular": "^1.4.8",
     "babel": "^5.8.19",
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "pg": "^4.4.3"
   }
 }
