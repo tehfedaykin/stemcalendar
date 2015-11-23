@@ -27,3 +27,15 @@ For deployment:
 ```shell
 $ npm run build
 ```
+
+
+## Database Setup
+
+* Install postgres sql
+* Open shell
+
+Create DB:  
+`cd stemcalendar && psql -d stem_events -a -f ./src/server/scripts/create_database.sql`
+
+Insert data:  
+`psql -a -f ./src/server/scripts/insert_data.sql`
