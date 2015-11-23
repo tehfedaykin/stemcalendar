@@ -26,7 +26,7 @@ For deployment:
 
 ```shell
 $ npm run build
-``
+```
 
 
 ## Database Setup
