@@ -121,7 +121,7 @@ module.exports = function makeWebpackConfig (options) {
 
    config.resolve = {
       alias: {
-         lodash: path.join(__dirname, "src/client/assets/libs/lodash.custom.min.js")
+         //lodash: path.join(__dirname, "src/client/assets/libs/lodash.custom.min.js")
       }
    }
 
@@ -177,18 +177,6 @@ module.exports = function makeWebpackConfig (options) {
       new ExtractTextPlugin('assets/[name].[hash].css', {
          disable: !BUILD || TEST
       }),
-      new webpack.DefinePlugin({
-         "WEBPACK_DEV_ENV": JSON.stringify(process.env.NODE_ENV),
-         "APP_ENV": {
-            "SMRXT_AUTH0_CLIENT_ID": JSON.stringify(process.env.SMRXT_AUTH0_CLIENT_ID || 'q7FGvFt1VIvUiWLIV8iuJSbPNg6HvrWR'),
-            "SMRXT_AUTH0_DOMAIN": JSON.stringify(process.env.SMRXT_AUTH0_DOMAIN || 'smrxt-test.auth0.com'),
-            "SMRXT_API_URL": JSON.stringify(process.env.SMRXT_API_URL || 'http://localhost:8005'),
-            "SMRXT_AUTH_URL": JSON.stringify(process.env.SMRXT_AUTH_URL || 'http://localhost:8070'),
-            "SMRXT_INVENTORY_URL": JSON.stringify(process.env.SMRXT_INVENTORY_URL || 'http://localhost:8080'),
-            "SMRXT_CLINICAL_URL": JSON.stringify(process.env.SMRXT_CLINICAL_URL || 'http://localhost:8090'),
-            "DEVELOPMENT": JSON.stringify(true)
-         }
-      })
    ];
 
    // Skip rendering index.html in test mode
