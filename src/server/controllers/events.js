@@ -25,9 +25,9 @@ router.put('/', (req, res) => {
 })
 
 router.get('/position/:lat/:lon', (req, res) => {
-  var locationQuery = 'SELECT *, point($1, $2) <@> point(lon, lat)::point AS stem_distance ' +
+  var locationQuery = 'SELECT *, point($1, $2) <@> geolocation::point AS stem_distance ' +
     'FROM events ' +
-    'WHERE (point($1, $2) <@> point(lon, lat)) < 100 ' +
+    // 'WHERE (point($1, $2) <@> geolocation) < 100 ' +
     'ORDER BY stem_distance;';
   var query = db.query(locationQuery, [req.params.lat, req.params.lon], (err, result) => {
     if(err) {
