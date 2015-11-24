@@ -1,15 +1,16 @@
 'use strict';
 
 
-export default function EventsCtrl() {
+export default function EventsCtrl(Events) {
 	let ev = this;
-
 	Events.search().then(function (response) {
-		console.log(response)
+		ev.events = response.data;
+	}).catch(() => {
+
 	})
 }
 
-EventsCtrl.$inject = []
+EventsCtrl.$inject = ['Events']
 
 export default angular.module('events.controllers', [])
-	.controllers('EventsCtrl', EventsCtrl)
+	.controller('EventsCtrl', EventsCtrl)

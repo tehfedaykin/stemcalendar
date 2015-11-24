@@ -1,8 +1,6 @@
 'use strict'
 
-export default function appConfig($stateProvider, $locationProvider) {
-
-	//$locationProvider.html5Mode(true);
+export default function appConfig($stateProvider) {
 
 	$stateProvider
 		.state('index', {
@@ -11,4 +9,4 @@ export default function appConfig($stateProvider, $locationProvider) {
 		});
 }
 
-appConfig.$inject = ['$stateProvider', '$locationProvider']
+appConfig.$inject = ['$stateProvider']

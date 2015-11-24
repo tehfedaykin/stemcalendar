@@ -1,7 +1,7 @@
 'use strict';
 
 var pg = require('pg');
-var connectionString = process.env.DATABASE_URL || 'postgres://JoshBavari@localhost:5432/stem_events';
+var connectionString = process.env.DATABASE_URL || 'postgres://jenniferwadella@localhost:5432/stem_events';
 // postgres://username:password@localhost/database
 var client = new pg.Client(connectionString);
 client.connect();
