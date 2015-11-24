@@ -1,7 +1,3 @@
---turn on the magic
-CREATE EXTENSION IF NOT EXISTS cube;
-CREATE EXTENSION IF NOT EXISTS earthdistance;
-
 -- DROP DATABASE IF EXISTS stem_events;
 -- COMMIT;
 DROP ROLE stem_user;
@@ -10,6 +6,10 @@ DROP ROLE stem_user;
 CREATE DATABASE stem_events;
 -- createuser stem_events;
 CREATE ROLE stem_user;
+
+--turn on the magic
+CREATE EXTENSION IF NOT EXISTS cube;
+CREATE EXTENSION IF NOT EXISTS earthdistance;
 
 \connect stem_events;
 

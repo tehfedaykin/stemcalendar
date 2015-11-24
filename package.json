@@ -9,7 +9,8 @@
     "watch": "nodemon -e js,html,less -w src/client -x 'npm run build'",
     "deploy": "webpack --config webpack.build.js",
     "test": "karma start",
-    "start": "webpack && node server.js"
+    "start": "webpack && node server.js",
+    "serve": "node server.js"
   },
   "author": "",
   "license": "ISC",

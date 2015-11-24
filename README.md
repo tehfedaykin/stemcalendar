@@ -39,3 +39,8 @@ Create DB:
 
 Insert data:  
 `psql -a -f ./src/server/scripts/insert_data.sql`
+
+
+### Dump database schema & data
+
+`pg_dump --schema-only -d stem_events`

@@ -23,6 +23,34 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 
 
+--
+-- Name: cube; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS cube WITH SCHEMA public;
+
+
+--
+-- Name: EXTENSION cube; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION cube IS 'data type for multidimensional cubes';
+
+
+--
+-- Name: earthdistance; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS earthdistance WITH SCHEMA public;
+
+
+--
+-- Name: EXTENSION earthdistance; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION earthdistance IS 'calculate great-circle distances on the surface of the Earth';
+
+
 SET search_path = public, pg_catalog;
 
 SET default_tablespace = '';
@@ -153,51 +181,6 @@ ALTER TABLE ONLY organizers ALTER COLUMN id SET DEFAULT nextval('organizers_id_s
 --
 
 ALTER TABLE ONLY tags ALTER COLUMN id SET DEFAULT nextval('tags_id_seq'::regclass);
-
-
---
--- Data for Name: events; Type: TABLE DATA; Schema: public; Owner: JoshBavari
---
-
-COPY events (id, startdate, enddate, geolocation, venue, description, organizer, tags) FROM stdin;
-\.
-
-
---
--- Name: events_id_seq; Type: SEQUENCE SET; Schema: public; Owner: JoshBavari
---
-
-SELECT pg_catalog.setval('events_id_seq', 1, false);
-
-
---
--- Data for Name: organizers; Type: TABLE DATA; Schema: public; Owner: JoshBavari
---
-
-COPY organizers (id, name) FROM stdin;
-\.
-
-
---
--- Name: organizers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: JoshBavari
---
-
-SELECT pg_catalog.setval('organizers_id_seq', 1, false);
-
-
---
--- Data for Name: tags; Type: TABLE DATA; Schema: public; Owner: JoshBavari
---
-
-COPY tags (id, name) FROM stdin;
-\.
-
-
---
--- Name: tags_id_seq; Type: SEQUENCE SET; Schema: public; Owner: JoshBavari
---
-
-SELECT pg_catalog.setval('tags_id_seq', 1, false);
 
 
 --
