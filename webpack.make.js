@@ -121,6 +121,7 @@ module.exports = function makeWebpackConfig (options) {
 
    config.resolve = {
       alias: {
+         //moment: path.join(__dirname,"src/client/assets/libs/moment.js"),
          //lodash: path.join(__dirname, "src/client/assets/libs/lodash.custom.min.js")
       }
    }

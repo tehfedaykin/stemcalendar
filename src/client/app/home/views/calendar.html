@@ -1,0 +1,43 @@
+<div class="row">
+   <h1 class="text-center ng-binding">{{cv.calendarDay | date : 'MMMM yyyy'}}</h1>
+</div>
+<div class="row">
+   <div class="col-md-6 text-center">
+      <div class="btn-group">
+         <button class="btn btn-primary ng-isolate-scope" mwl-date-modifier="" date="cv.calendarDay" decrement="cv.calendarView">
+         Previous
+         </button>
+         <button class="btn btn-default ng-isolate-scope" mwl-date-modifier="" date="cv.calendarDay" set-to-today="">
+         Today
+         </button>
+         <button class="btn btn-primary ng-isolate-scope" mwl-date-modifier="" date="cv.calendarDay" increment="cv.calendarView">
+         Next
+         </button>
+      </div>
+   </div>
+   <br class="visible-xs visible-sm">
+   <div class="col-md-6 text-center">
+         <div class="btn-group">
+         <label class="btn btn-primary" ng-model="cv.calendarView" uib-btn-radio="'year'" style="">Year</label>
+         <label class="btn btn-primary active" ng-model="cv.calendarView" uib-btn-radio="'month'" style="">Month</label>
+         <label class="btn btn-primary" ng-model="cv.calendarView" uib-btn-radio="'week'" style="">Week</label>
+         <label class="btn btn-primary" ng-model="cv.calendarView" uib-btn-radio="'day'">Day</label>
+      </div>
+   </div>
+</div>
+<div class="row calendar">
+   <mwl-calendar
+      view="cv.calendarView"
+      current-day="cv.calendarDay"
+      events="cv.events"
+      view-title="calendarTitle"
+      on-event-click="eventClicked(calendarEvent)"
+      on-event-times-changed="calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd"
+      edit-event-html="'<i class=\'glyphicon glyphicon-pencil\'></i>'"
+      delete-event-html="'<i class=\'glyphicon glyphicon-remove\'></i>'"
+      on-edit-event-click="eventEdited(calendarEvent)"
+      on-delete-event-click="eventDeleted(calendarEvent)"
+      cell-is-open="true">
+   </mwl-calendar>
+</div>
+

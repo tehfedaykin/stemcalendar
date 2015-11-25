@@ -7,7 +7,13 @@ export default function appConfig($stateProvider, $locationProvider) {
 	$stateProvider
 		.state('app', {
 			url: '/',
+			abstract: true,
 			template: require('./app/home/views/home.html')
+		})
+		.state('app.calendar', {
+			url: 'calendar',
+			controller: 'CalendarCtrl as cv',
+			template: require('./app/home/views/calendar.html')
 		});
 }
 
