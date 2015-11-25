@@ -16,6 +16,11 @@ function eventRoutes($stateProvider) {
          url: 'create-event',
          controller: 'CreateEventCtrl as ev',
          template: require('./views/create-event.html')
+      })
+      .state('app.event', {
+         url: 'event/:id',
+         controller: 'EventCtrl as ev',
+         template: require('./views/event.html')
       });
 }
 

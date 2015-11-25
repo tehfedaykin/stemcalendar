@@ -2,6 +2,10 @@
   <h1>Events List</h1>
   <p>super sweet STEM events</p>
    <ul>
-      <li ng-repeat="event in ev.events"></li>
+      <li ng-repeat="event in ev.events">
+      	<a ui-sref="app.event({ id: {{event.id}} })">
+      		<b>{{event.name}}</b> <i>{{event.description}}</i>
+      	</a>
+      </li>
    </ul>
 </div>

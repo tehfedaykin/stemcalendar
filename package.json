@@ -48,6 +48,7 @@
     "angular": "^1.4.8",
     "angular-ui-router": "^0.2.15",
     "babel": "^5.8.19",
+    "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "pg": "^4.4.3"
   }
