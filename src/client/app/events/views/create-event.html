@@ -1,1 +1,49 @@
-create event
+<form class="form-horizontal">
+   <div class="control-group">
+      <label class="control-label" for="name">Event Name</label>
+      <div class="controls">
+         <input type="text" id="name" placeholder="" ng-model="ev.newEvent.name">
+      </div>
+      <label class="control-label" for="decription">Event Description</label>
+      <div class="controls">
+         <textarea id="decription" placeholder="" ng-model="ev.newEvent.description"></textarea>
+      </div>
+   </div>
+   <div class="control-group">
+      <label class="control-label" for="startTime">Starts</label>
+      <div class="controls">
+         <input type="date" id="startDate" placeholder="" ng-model="ev.startDate">
+         <input type="time" id="startTime" placeholder="" ng-model="ev.startTime">
+      </div>
+      <label class="control-label" for="endDate">Ends</label>
+      <div class="controls">
+         <input type="date" id="endDate" placeholder="" ng-model="ev.endDate">
+         <input type="time" id="endTime" placeholder="" ng-model="ev.endTime">
+      </div>
+   </div>
+   <div class="control-group">
+      <label class="control-label" for="geolocation">Geolocation</label>
+      <div class="controls">
+         <input type="text" id="geolocation" placeholder="" ng-model="ev.newEvent.geolocation">
+      </div>
+      <label class="control-label" for="venue">Venue</label>
+      <div class="controls">
+         <input type="text" id="venue" placeholder="" ng-model="ev.newEvent.venue">
+      </div>
+   </div>
+   <div class="control-group">
+      <label class="checkbox">
+         <input type="checkbox" value="science"> Science
+      </label>
+      <label class="checkbox">
+         <input type="checkbox" value="technology"> Technology
+      </label>
+      <label class="checkbox">
+         <input type="checkbox" value="engineering"> Engineering
+      </label>
+      <label class="checkbox">
+         <input type="checkbox" value="math"> Math
+      </label>
+      <button type="submit" ng-click="ev.createEvent()" class="btn btn-primary">Submit</button>
+   </div>
+</form>

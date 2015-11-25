@@ -11,17 +11,14 @@ router.get('/', (req, res) => {
     res.end();
     // db.end();
   });
-})
+});
 
-router.put('/', (req, res) => {
-  var query = db.query('SELECT * from events', (err, result) => {
-    if(err) {
-      return console.error('error running query', err);
-    }
-    res.write(JSON.stringify(result.rows));
-    res.end();
-    // db.end();
-  });
+router.post('/', (req, res) => {
+  console.log(req.body)
+  //var createQuery = db.query("INSERT INTO events(startdate, enddate, geolocation, venue, description, organizer, tags) values($1, $2, $3, $4, $5, $6, $7)");
+  // var data = {
+  //   req.body
+  // }
 })
 
 router.get('/position/:lat/:lon', (req, res) => {
