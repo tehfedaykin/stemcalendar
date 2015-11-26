@@ -1,11 +1,5 @@
-DROP DATABASE IF EXISTS stem_events;
--- COMMIT;
-DROP ROLE stem_user;
--- DROP TABLE events;
-
-CREATE DATABASE stem_events;
--- createuser stem_events;
-CREATE ROLE stem_user;
+-- CREATE ROLE stem_user;
+GRANT ALL PRIVILEGES ON DATABASE stem_events to stem_user;
 
 --turn on the magic
 CREATE EXTENSION IF NOT EXISTS cube;
@@ -14,6 +8,7 @@ CREATE EXTENSION IF NOT EXISTS earthdistance;
 
 CREATE TABLE events (
   ID SERIAL PRIMARY KEY, 
+  name varchar(255),
   startdate timestamptz, 
   enddate timestamptz, 
   geolocation point, 

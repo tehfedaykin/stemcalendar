@@ -35,12 +35,15 @@ $ npm run build
 * Open shell
 
 Create DB:  
-`cd stemcalendar && psql -d stem_events -a -f ./src/server/scripts/create_database.sql`
+`npm run db`
 
 Insert data:  
-`psql -a -f ./src/server/scripts/insert_data.sql`
+`npm run db:data`
 
+Ensure it worked:
+`psql -d stem_events -U stem_user -c 'select * from events;'`
 
 ### Dump database schema & data
 
 `pg_dump --schema-only -d stem_events`
+
