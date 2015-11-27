@@ -34,13 +34,16 @@ $ npm run build
 * Install postgres sql
 * Open shell
 
-Create DB:  
+### Create DB
+
 `npm run db`
 
-Insert data:  
+### Insert data
+
 `npm run db:data`
 
-Ensure it worked:
+### Ensure it worked:
+
 `psql -d stem_events -U stem_user -c 'select * from events;'`
 
 ### Dump database schema & data
