@@ -58,11 +58,12 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: events; Type: TABLE; Schema: public; Owner: JoshBavari; Tablespace: 
+-- Name: events; Type: TABLE; Schema: public; Owner: stem_user; Tablespace: 
 --
 
 CREATE TABLE events (
     id integer NOT NULL,
+    name character varying(255),
     startdate timestamp with time zone,
     enddate timestamp with time zone,
     geolocation point,
@@ -73,10 +74,10 @@ CREATE TABLE events (
 );
 
 
-ALTER TABLE events OWNER TO "JoshBavari";
+ALTER TABLE events OWNER TO stem_user;
 
 --
--- Name: events_id_seq; Type: SEQUENCE; Schema: public; Owner: JoshBavari
+-- Name: events_id_seq; Type: SEQUENCE; Schema: public; Owner: stem_user
 --
 
 CREATE SEQUENCE events_id_seq
@@ -87,17 +88,17 @@ CREATE SEQUENCE events_id_seq
     CACHE 1;
 
 
-ALTER TABLE events_id_seq OWNER TO "JoshBavari";
+ALTER TABLE events_id_seq OWNER TO stem_user;
 
 --
--- Name: events_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: JoshBavari
+-- Name: events_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stem_user
 --
 
 ALTER SEQUENCE events_id_seq OWNED BY events.id;
 
 
 --
--- Name: organizers; Type: TABLE; Schema: public; Owner: JoshBavari; Tablespace: 
+-- Name: organizers; Type: TABLE; Schema: public; Owner: stem_user; Tablespace: 
 --
 
 CREATE TABLE organizers (
@@ -106,10 +107,10 @@ CREATE TABLE organizers (
 );
 
 
-ALTER TABLE organizers OWNER TO "JoshBavari";
+ALTER TABLE organizers OWNER TO stem_user;
 
 --
--- Name: organizers_id_seq; Type: SEQUENCE; Schema: public; Owner: JoshBavari
+-- Name: organizers_id_seq; Type: SEQUENCE; Schema: public; Owner: stem_user
 --
 
 CREATE SEQUENCE organizers_id_seq
@@ -120,17 +121,17 @@ CREATE SEQUENCE organizers_id_seq
     CACHE 1;
 
 
-ALTER TABLE organizers_id_seq OWNER TO "JoshBavari";
+ALTER TABLE organizers_id_seq OWNER TO stem_user;
 
 --
--- Name: organizers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: JoshBavari
+-- Name: organizers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stem_user
 --
 
 ALTER SEQUENCE organizers_id_seq OWNED BY organizers.id;
 
 
 --
--- Name: tags; Type: TABLE; Schema: public; Owner: JoshBavari; Tablespace: 
+-- Name: tags; Type: TABLE; Schema: public; Owner: stem_user; Tablespace: 
 --
 
 CREATE TABLE tags (
@@ -139,10 +140,10 @@ CREATE TABLE tags (
 );
 
 
-ALTER TABLE tags OWNER TO "JoshBavari";
+ALTER TABLE tags OWNER TO stem_user;
 
 --
--- Name: tags_id_seq; Type: SEQUENCE; Schema: public; Owner: JoshBavari
+-- Name: tags_id_seq; Type: SEQUENCE; Schema: public; Owner: stem_user
 --
 
 CREATE SEQUENCE tags_id_seq
@@ -153,38 +154,38 @@ CREATE SEQUENCE tags_id_seq
     CACHE 1;
 
 
-ALTER TABLE tags_id_seq OWNER TO "JoshBavari";
+ALTER TABLE tags_id_seq OWNER TO stem_user;
 
 --
--- Name: tags_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: JoshBavari
+-- Name: tags_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stem_user
 --
 
 ALTER SEQUENCE tags_id_seq OWNED BY tags.id;
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: JoshBavari
+-- Name: id; Type: DEFAULT; Schema: public; Owner: stem_user
 --
 
 ALTER TABLE ONLY events ALTER COLUMN id SET DEFAULT nextval('events_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: JoshBavari
+-- Name: id; Type: DEFAULT; Schema: public; Owner: stem_user
 --
 
 ALTER TABLE ONLY organizers ALTER COLUMN id SET DEFAULT nextval('organizers_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: JoshBavari
+-- Name: id; Type: DEFAULT; Schema: public; Owner: stem_user
 --
 
 ALTER TABLE ONLY tags ALTER COLUMN id SET DEFAULT nextval('tags_id_seq'::regclass);
 
 
 --
--- Name: events_pkey; Type: CONSTRAINT; Schema: public; Owner: JoshBavari; Tablespace: 
+-- Name: events_pkey; Type: CONSTRAINT; Schema: public; Owner: stem_user; Tablespace: 
 --
 
 ALTER TABLE ONLY events
@@ -192,7 +193,7 @@ ALTER TABLE ONLY events
 
 
 --
--- Name: organizers_pkey; Type: CONSTRAINT; Schema: public; Owner: JoshBavari; Tablespace: 
+-- Name: organizers_pkey; Type: CONSTRAINT; Schema: public; Owner: stem_user; Tablespace: 
 --
 
 ALTER TABLE ONLY organizers
@@ -200,7 +201,7 @@ ALTER TABLE ONLY organizers
 
 
 --
--- Name: tags_pkey; Type: CONSTRAINT; Schema: public; Owner: JoshBavari; Tablespace: 
+-- Name: tags_pkey; Type: CONSTRAINT; Schema: public; Owner: stem_user; Tablespace: 
 --
 
 ALTER TABLE ONLY tags

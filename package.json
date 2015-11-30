@@ -5,12 +5,17 @@
   "main": "server.js",
   "scripts": {
     "lint": "jshint src/client/app/*.js",
+    "db": "node ./scripts/create_db.js",
+    "db:schema": "node ./scripts/sql/01_schema.sql",
+    "db:data": "psql -d stem_events -U stem_user -a -f ./scripts/sql/02_data.sql",
+    "db:backup": "pg_dump --schema-only -d stem_events > ./scripts/backup.sql",
     "build": "webpack",
     "watch": "nodemon -e js,html,less -w src/client -x 'npm run build'",
     "deploy": "webpack --config webpack.build.js",
     "test": "karma start",
     "start": "webpack && node server.js",
-    "serve": "node server.js"
+    "serve": "node server.js",
+    "server": "node server.js"
   },
   "author": "",
   "license": "ISC",
