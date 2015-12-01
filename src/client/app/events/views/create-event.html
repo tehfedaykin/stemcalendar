@@ -1,16 +1,16 @@
+<h1 class="text-center">Create Event</h1>
+<p class="text-center">Add your event to STEM Calendar</p>
 <form class="form-horizontal">
-   <div class="control-group">
-      <label class="control-label" for="name">Event Name</label>
-      <div class="controls">
-         <input type="text" id="name" placeholder="" ng-model="ev.newEvent.name">
-      </div>
-      <label class="control-label" for="decription">Event Description</label>
-      <div class="controls">
-         <textarea id="decription" placeholder="" ng-model="ev.newEvent.description"></textarea>
-      </div>
-      <label class="control-label" for="decription">Organizer</label>
-      <div class="controls">
-         <textarea id="decription" placeholder="" ng-model="ev.newEvent.organizer"></textarea>
+   <div class="form-group row">
+      <div class="col-md-4">
+         <label for="name">Event Name</label>
+         <input type="text" class="form-control"  placeholder="" ng-model="ev.newEvent.name">
+
+         <label for="decription">Event Description</label>
+         <textarea class="form-control" placeholder="" ng-model="ev.newEvent.description"></textarea>
+
+         <label class="control-label" for="organizer">Organizer</label>
+         <input class="form-control" placeholder="" ng-model="ev.newEvent.organizer"/>
       </div>
    </div>
    <div class="control-group">

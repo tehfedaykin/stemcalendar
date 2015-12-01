@@ -48,7 +48,7 @@ function EventCtrl(Events, $stateParams) {
    Events.search({id: $stateParams.id}).then((response) => {
       ev.event = response.data[0];
       console.log(ev.event);
-   })
+   });
 }
 
 EventCtrl.$inject = ['Events', '$stateParams'];

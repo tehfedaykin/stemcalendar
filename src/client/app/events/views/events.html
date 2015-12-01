@@ -1,17 +1,19 @@
 <div class="hero-unit">
-   <h1>Events List</h1>
-   <p>super sweet STEM events</p>
+   <h1 class="text-center">Events List</h1>
+   <p class="text-center">super sweet STEM events</p>
    <a ui-sref="event({ id: {{event.id}} })" class="row show-grid" ng-repeat="event in ev.events">
-      <div class="col-md-3">
-         <div class="date">
-            {{event.startdate | date : 'd'}}
-         </div>
-         <div class="month">
-            {{event.startdate | date : 'MMM'}}
+      <div class="col-md-2">
+         <div class="cal-date">
+            <div class="date">
+               {{event.startdate | date : 'd'}}
+            </div>
+            <div class="month">
+               {{event.startdate | date : 'MMM'}}
+            </div>
          </div>
       </div>
-      <div class="col-md-9">
-         <p>{{event.startdate | date : 'hh:mm'}} - {{event.enddate | date : 'hh:mm'}}</p>
+      <div class="col-md-9 cal-info">
+         <p>{{event.startdate | date : 'hh:mm a'}} - {{event.enddate | date : 'hh:mm a'}}</p>
          <h2>{{event.name}}</h2>
          <h3>{{event.venue}}</h3>
          <p><i>{{event.description}}</i></p>

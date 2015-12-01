@@ -115,6 +115,10 @@ module.exports = function makeWebpackConfig (options) {
       }, {
          test: /\.json$/,
          loader: 'json-loader'
+      },
+      {
+        test: /\.less$/,
+        loader: "style!css!less"
       }]
    };
 
@@ -144,7 +148,7 @@ module.exports = function makeWebpackConfig (options) {
    // Reference: https://github.com/webpack/css-loader
    // Allow loading css through js
    var cssLoader = {
-      test: /\.less$|\.css$/,
+      test: /\.css$/,
       // Reference: https://github.com/webpack/extract-text-webpack-plugin
       // Extract css files in production builds
       //

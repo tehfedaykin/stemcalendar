@@ -1,2 +1,5 @@
-<h1>{{ev.event.startdate | date : 'M/d/yy h:mm'}} {{ev.event.name}}</h1>
+<h1>{{ev.event.name}}</h1>
+<h2>{{ev.event.startdate | date : 'EEEE, MMMM d'}} </h2>
+<h2>{{ev.event.startdate | date : 'h:mm a'}} - {{ev.event.enddate | date : 'h:mm a'}}</h2>
+<h3>{{ev.event.venue}}</h3>
 <p class="lead">{{ev.event.description}}</p>
