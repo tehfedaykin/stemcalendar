@@ -56,8 +56,12 @@
     "babel": "^5.8.19",
     "body-parser": "^1.14.1",
     "bootstrap": "^3.3.6",
+    "exports-loader": "^0.6.2",
     "express": "^4.13.3",
+    "imports-loader": "^0.6.5",
+    "lodash": "^3.10.1",
     "moment": "^2.10.6",
-    "pg": "^4.4.3"
+    "pg": "^4.4.3",
+    "url-loader": "^0.5.7"
   }
 }

@@ -4,7 +4,7 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 
 export default {
-   start: () => {
+   start: (dir) => {
       app.use('/assets', express.static('./public/assets'));
 
       app.use( bodyParser.json() );       // to support JSON-encoded bodies
@@ -17,8 +17,8 @@ export default {
         var port = server.address().port;
       });
 
-      app.all('/*', function(req, res) {
-        res.sendfile('./public/index.html');
+      app.get('*', function(req, res) {
+        res.sendFile(dir + '/public/index.html');
       });
 
    }

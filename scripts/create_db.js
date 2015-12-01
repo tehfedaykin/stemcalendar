@@ -25,7 +25,7 @@ exec('createdb', ['-O', 'stem_user', 'stem_events']);
 
 sqlScripts = fs.readdirSync(path.join(__dirname, 'sql'));
 
-sqlScripts.forEach(script => {
+sqlScripts.forEach(function(script){
   console.log('Executing SQL script: ', path.join(__dirname, 'sql', script));
   exec('psql',  ['-a', '-d', 'stem_events',  '-U',  'stem_user', '-f', path.join(__dirname, 'sql', script)]);
 });

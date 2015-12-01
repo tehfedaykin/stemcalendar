@@ -115,8 +115,7 @@ module.exports = function makeWebpackConfig (options) {
       }, {
          test: /\.json$/,
          loader: 'json-loader'
-      }
-]
+      }]
    };
 
    config.resolve = {

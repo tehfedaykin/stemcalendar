@@ -23,11 +23,16 @@ function Events($http) {
       * @returns {Object}
       */
       create(data) {
-         console.log(data)
          return $http({
             method: 'POST',
             url: 'http://localhost:3000/api/events',
             data: data
+         })
+      },
+      location(lat, lon) {
+         return $http({
+            method: 'GET',
+            url: 'http://localhost:3000/api/position/' + lat + '/' + lon
          })
       }
    }

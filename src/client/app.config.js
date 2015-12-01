@@ -1,19 +1,15 @@
 'use strict'
 
-export default function appConfig($stateProvider, $locationProvider) {
+export default function appConfig($stateProvider, $locationProvider, $urlRouterProvider) {
    $locationProvider.html5Mode(true);
 
+   $urlRouterProvider.otherwise('/home');
    $stateProvider
-      .state('app', {
-         url: '',
-         abstract: true,
-         template: require('./app/home/views/home.html')
-      })
-      .state('app.calendar', {
-         url: 'calendar',
+      .state('home', {
+         url: '/home',
          controller: 'CalendarCtrl as cv',
          template: require('./app/home/views/calendar.html')
       });
 }
 
-appConfig.$inject = ['$stateProvider', '$locationProvider']
+appConfig.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider']

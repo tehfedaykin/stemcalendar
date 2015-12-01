@@ -7,18 +7,18 @@ import './services.js';
 
 function eventRoutes($stateProvider) {
    $stateProvider
-      .state('app.events', {
-         url: 'events',
+      .state('events', {
+         url: '/events',
          controller: 'EventsCtrl as ev',
          template: require('./views/events.html')
       })
-      .state('app.createEvent', {
-         url: 'create-event',
+      .state('createEvent', {
+         url: '/create-event',
          controller: 'CreateEventCtrl as ev',
          template: require('./views/create-event.html')
       })
-      .state('app.event', {
-         url: 'event/:id',
+      .state('event', {
+         url: '/event/:id',
          controller: 'EventCtrl as ev',
          template: require('./views/event.html')
       });

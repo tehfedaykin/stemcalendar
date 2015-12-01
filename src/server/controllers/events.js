@@ -25,8 +25,8 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   let data = req.body;
-  var createQuery = 'INSERT INTO events(startdate, enddate, geolocation, venue, description, organizer, tags) values($1, $2, $3, $4, $5, $6, $7)';
-  var query = db.query(createQuery, [data.startdate, data.endate, data.geolocation, data.venue, data.description, data.organizer, data.tags], (err, result) => {
+  var createQuery = 'INSERT INTO events(name, startdate, enddate, geolocation, venue, description, organizer, tags) values($1, $2, $3, $4, $5, $6, $7, $8)';
+  var query = db.query(createQuery, [data.name, data.startdate, data.enddate, data.geolocation, data.venue, data.description, data.organizer, data.tags], (err, result) => {
     if(err) {
       return console.error('error running query', err);
     }
